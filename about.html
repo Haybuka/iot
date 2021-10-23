@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <title>Document</title>
+    <style>
+         *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins',sans-serif;
+ 
+            color: #fff;
+        }
+        h3{
+            font-size: 22px;
+            margin: 10px 0;
+        }
+        li{
+            font-size: 18px;
+        }
+        body{
+            background-color: #000;
+            transition: all 0.5s ease-in;
+        }
+        a{
+            text-decoration: none;
+        }
+        .container{
+            width: 600px;
+            margin: 10px auto;
+            position: relative;
+            background-color: rgb(0, 0, 0);
+            margin-top: 0;
+            padding: 10px 15px;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+        h1{
+            font-size: 40px;
+            background-image: url('/assets/image/iotGif.webp');
+            /* background-image: url('/assets/image/iot2.webp'); */
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 300px;
+            display: flex;
+            align-items: end;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.486);
+        }
+        p{
+            margin: 15px 0;
+        }
+        span{
+            color: #3ddc00;
+        }
+        /* section div{
+            width: 400px;
+            height: 400px;
+        }
+        section div img{
+            width: 100%;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+             <section>
+                 <h1>
+                     internet of Things
+                 </h1>
+             </section>
+             <section>
+                 <h3>What is internet of things (IoT)?</h3>
+                 <p>
+                    <span>The internet of things, or IoT, is a system of interrelated computing devices, mechanical and digital machines</span>, objects, animals or people that are provided with unique identifiers (UIDs) and the ability to transfer data over a network without requiring human-to-human or human-to-computer interaction.
+                 </p>
+                 <p>
+                    A thing in the internet of things can be a person with a heart monitor implant, a farm animal with a biochip transponder, an automobile that has built-in sensors to alert the driver when tire pressure is low or any other natural or man-made object that can be assigned an Internet Protocol (IP) address and is able to transfer data over a network.
+                 </p>
+                 <p>
+                    Increasingly, organizations in a variety of industries are <span>using IoT to operate more efficiently, better understand customers</span> to deliver enhanced customer service, improve decision-making and <span>increase the value of the business</span>.
+                 </p>
+             </section>
+             <section>
+                 <h3>
+                    How does IoT work?
+                 </h3>
+                 <p>
+                    An <span>IoT ecosystem</span> consists of <span>web-enabled smart devices that use embedded systems</span>, such as processors, sensors and communication hardware, to collect, send and act on data they acquire from their environments.
+    
+                 </p>
+                 <p>
+                    <span> IoT devices share the sensor data they collect by connecting to an IoT gateway</span> or other edge device where data is either sent to the cloud to be analyzed or analyzed locally. Sometimes, these devices communicate with other related devices and act on the information they get from one another. <span>The devices do most of the work without human intervention</span>, although people can interact with the devices -- for instance, to set them up, give them instructions or access the data.
+                 </p>
+                 <p>
+                    The connectivity, networking and communication protocols used with these web-enabled devices largely depend on the specific IoT applications deployed.
+                 </p>
+                 <p>
+                    IoT can also make use of artificial intelligence (AI) and machine learning to aid in making data collecting processes easier and more dynamic.
+                 </p>
+             </section>
+             <section>
+                 <div>
+                     <img src="/assets/image/iota-iot_system_desktop.png" alt="">
+                 </div>
+             </section>
+             <section>
+                 <h3>What are the benefits of IoT to organizations?</h3>
+                 <ul>
+                     <li>
+                        monitor their overall business processes;
+                     </li>
+                     <li>
+                        improve the customer experience (CX);
+                     </li>
+                     <li>
+                        save time and money;
+                     </li>
+                     <li>
+                        enhance employee productivity;
+                     </li>
+                     <li>
+                        integrate and adapt business models;
+                     </li>
+                 </ul>
+                 <p>
+                    <span>IoT encourages companies to rethink the ways they approach their businesses and gives them the tools to improve their business strategies</span>.
+                 </p>
+             </section>
+             <a href="/living.html"> < Back</a>
+    </div>
+    <script>
+        let h1 = document.querySelector('h1');
+
+        let iotImg = ['/assets/image/iot3.webp','/assets/image/iot2.webp','/assets/image/iotGif.webp']
+        // let rand = Math.floor(Math.random() * iotImg.length) + 1;
+        let rand = (iotImg) =>{
+            return iotImg[Math.floor(Math.random() * iotImg.length)];
+        }
+        console.log(rand(iotImg))
+        setInterval(() => {
+            // h1.style.background.url = rand(iotImg);
+            h1.style.background = 'rand(iotImg)';
+            console.log('called iot')
+        }, 5000);
+    </script>
+</body>
+</html>

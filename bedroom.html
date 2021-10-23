@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins',sans-serif;
+            list-style: none;
+            color: #fff;
+        }
+        .bedroom-img{
+            background-image: url('/assets/image/smartroom.jpg');
+            background-position: center;
+            background-size: cover;
+            border-radius: 15px;
+            height: 200px;
+            position: relative;
+        }
+        .bedroom-img::before{
+            content: '';
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.397);
+            position: absolute;
+            z-index: 5;
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            background-color: #000;
+        }
+        a{
+            text-decoration: none;
+        }
+        .container{
+            width: 600px;
+            margin: 10px auto;
+            position: relative;
+            background-color: rgb(0, 0, 0);
+            margin-top: 0;
+            overflow-x: hidden;
+            height: 100vh;
+            box-shadow: 1px 1px 3px #fff;
+            border-bottom-right-radius:5px ;
+        border-bottom-left-radius: 5px;
+        }
+    nav{
+        background-color: #60e92b8f;
+        padding: 30px 10px;
+        border-bottom-right-radius:50px ;
+        border-bottom-left-radius: 50px;
+        height: 200px;
+    }
+    nav h3{
+        font-size: 25px;
+    }
+    nav p{
+        font-size: 18px;
+    }
+    .lamp span{
+        color:#000;
+    }
+    .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin: 5px 0;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 2px;
+  bottom: 2.5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #3ddc00;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #3ddc00;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.623);
+    color:#000 !important;
+    padding: 15px 10px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+li h4,li p{
+    color: #000;
+}
+main{
+    padding: 10px 15px;
+
+}
+nav div{
+    text-align: center;
+}
+nav div:nth-of-type(even){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav div p span{
+    font-size: 20px;
+    font-family: cursive;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <p>
+                <a href="/index.html">< Back</a>
+            </p>
+            <div>
+                <h3>Bed Room</h3>
+                <small>3 family Members Have Access</small>
+            </div>
+            <div>
+                <p> <span></span></p>
+            </div>
+        </nav>
+        <main>
+            <ul>
+                <li>
+                    <div class="lamp">
+                            <h4>Lamp</h4>
+                            <p> <span>64</span> % Brightness</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                      </label>
+                </li>
+                <li>
+                    <div class="lamp">
+                            <h4>Tv</h4>
+                            <p><span>64</span>%  Volume</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                      </label>
+                </li>
+                <li>
+                    <div class="lamp">
+                            <h4>Air Conditioner</h4>
+                            <p><span>64</span> &deg; C Temperature</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                      </label>
+                </li>
+                <li>
+                    <div class="lamp">
+                            <h4>Fridge</h4>
+                            <p><span>64</span> &deg; C Temperature</p>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                      </label>
+                </li>
+            </ul>
+            <div class="bedroom-img">
+
+            </div>
+        </main>
+    </div>
+    <script>
+        let spanNum = [...document.querySelectorAll('.lamp p span')]
+        let navSpan = document.querySelector('nav span')
+        let rand = (num) =>{
+            return Math.floor(Math.random() * num) +20;
+        }
+        spanNum.forEach(num =>{
+            num.innerHTML = rand(80);
+        })
+        navSpan.innerHTML = `${rand(50)} &deg;C`
+    </script>
+</body>
+</html>

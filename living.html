@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: 'Poppins',sans-serif;
+            list-style: none;
+            color: #fff;
+        }
+        body{
+            background-color: #000;
+            transition: all 0.5s ease-in;
+        }
+        a{
+            text-decoration: none;
+        }
+        .container{
+            width: 500px;
+            margin: 10px auto;
+            position: relative;
+            background-color: rgb(0, 0, 0);
+            margin-top: 0;
+            padding: 10px 15px;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+        .changeBg{
+            background-color: #fff;
+        }
+        .room{
+      
+            height: 150px;
+            width: 150px;
+            background-color: #000;
+            border-radius: 15px;
+            padding: 10px 20px;
+            margin: 15px 0;
+            /* position: relative;
+            display: flex;
+            align-items: end; */
+        }
+        .text h3{
+            color:#fff
+        }
+        .text p{
+            color: #3ddc00;
+        }
+        .img{
+            width: 40px;
+            height: 40px;
+            display: none;
+        }
+        .img img{
+            width: 100%;
+            height: 100%;
+        }
+        .room{
+            background-color: #111111;
+        }
+        .active-nav{
+            background-color: #111;
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+        .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin: 5px 0;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 2px;
+  bottom: 2.5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #3ddc00;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #3ddc00;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 400px;
+    /* flex-direction: column; */
+}
+main section{
+    margin: 0 10px;
+}
+small{
+    display: block;
+    line-height: 15px;
+}
+aside{
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+aside ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: rotate(90deg) translateX(380px) translateY(-388px);
+    transform-origin: top;
+    /* background-color: #111111; */
+    color: #fff;
+    padding: 15px;
+    width: 100vh;
+}
+aside li{
+    margin: 0 10px;
+}
+.room.outstand{
+    background-color: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.356);
+    padding: 10px 15px;
+}
+nav div p{
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+    </style>
+    <link rel="stylesheet" href="/assets/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+             <header>
+                <nav>
+                       <h3>
+                        Welcome, Group 7!
+                       </h3>
+                    <div>
+                        <p>
+                           living Room Temp : <span class="temp">Room Temp</span>
+                        </p>
+                        <small class="date">date</small>
+                    </div>
+                   
+                </nav>
+             </header>
+             <main>
+                <div class="gadgets ">
+                    <section class="room outstand">
+                        <div class="img">
+                           <img src="/assets/image/aircon.png" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>Lamp</h3>
+                            <p>
+                                connected
+                            </p>
+                        </div>
+    
+                        <label class="switch">
+                           <input type="checkbox" checked>
+                           <span class="slider round"></span>
+                         </label>
+                    </section>
+                    <section class="room">
+                        <div class="img">
+                           <img src="/assets/image/aircon.png" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>CCTV cAM</h3>
+                            <p>
+                                connected
+                            </p>
+                        </div>
+                        
+                        <label class="switch">
+                           <input type="checkbox" checked>
+                           <span class="slider round"></span>
+                         </label>
+                    </section>
+                   </div>
+                 <div class="gadgets">
+                    <section class="room">
+                        <div class="img">
+                           <img src="/assets/image/light.png" alt="">
+                        </div>
+                        <div class="text">
+                            <h3>Light Bulb</h3>
+                            <p>
+                                connected
+                            </p>
+                        </div>
+                        <label class="switch">
+                           <input type="checkbox" checked>
+                           <span class="slider round"></span>
+                         </label>
+                    </section>
+                    <section class="room">
+                       <div class="img">
+                          <img src="/assets/image/aircon.png" alt="">
+                       </div>
+                       <div class="text">
+                           <h3>Air Con.</h3>
+                           <p>
+                               connected
+                           </p>
+                       </div>
+                       <label class="switch">
+                          <input type="checkbox" checked>
+                          <span class="slider round"></span>
+                        </label>
+                   </section>
+                 </div>
+               <div class="gadgets ">
+                <section class="room outstand">
+                    <div class="img">
+                       <img src="/assets/image/aircon.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Refridgerator</h3>
+                        <p>
+                            connected
+                        </p>
+                    </div>
+
+                    <label class="switch">
+                       <input type="checkbox" checked>
+                       <span class="slider round"></span>
+                     </label>
+                </section>
+                <section class="room">
+                    <div class="img">
+                       <img src="/assets/image/aircon.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Smart Tv</h3>
+                        <p>
+                            connected
+                        </p>
+                    </div>
+                    
+                    <label class="switch">
+                       <input type="checkbox" checked>
+                       <span class="slider round"></span>
+                     </label>
+                </section>
+               </div>
+               <div class="gadgets ">
+                <section class="room outstand">
+                    <div class="img">
+                       <img src="/assets/image/aircon.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>Lamp</h3>
+                        <p>
+                            connected
+                        </p>
+                    </div>
+
+                    <label class="switch">
+                       <input type="checkbox" checked>
+                       <span class="slider round"></span>
+                     </label>
+                </section>
+                <section class="room">
+                    <div class="img">
+                       <img src="/assets/image/aircon.png" alt="">
+                    </div>
+                    <div class="text">
+                        <h3>CCTV cAM</h3>
+                        <p>
+                            connected
+                        </p>
+                    </div>
+                    
+                    <label class="switch">
+                       <input type="checkbox" checked>
+                       <span class="slider round"></span>
+                     </label>
+                </section>
+               </div>
+             </main>
+             <aside>
+                   <ul>
+                       <li class="active-nav">
+                           <a href="/">Living Room</a>
+                       </li>
+                       <li>
+                           <a href="/bedroom.html">Bedroom</a>
+                       </li>
+                       <li>
+                           <a href="/about.html">About</a>
+                       </li>
+                       <li>
+                           <a href="/overview.html">Overview</a>
+                       </li>
+                   </ul>
+             </aside>
+    </div>
+    <script>
+        const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const months= ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  let input = [...document.querySelectorAll('input')]
+        let date = document.querySelector('.date');
+        let body = document.querySelector('body')
+        let degree = document.querySelector('.temp')
+
+        //initialize date and time
+function dateTime(dateSpan){
+    let date = new Date();
+    let dayOfWeek = days[date.getDay()];
+    let dateNum = date.getDate();
+    let month = months[date.getMonth()];
+    dateSpan.innerHTML = `${dayOfWeek}, ${dateNum} ${month}.`
+    date.getDay();
+}
+
+input.forEach(put =>{
+    put.addEventListener('change',()=>{
+        body.classList.toggle('changeBg')
+    })
+})
+ dateTime(date);
+
+ let rand = Math.floor(Math.random() * 30) + 10;
+ degree.innerHTML = `${rand} &deg; C`
+    </script>
+</body>
+</html>
